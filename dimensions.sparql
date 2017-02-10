@@ -1,0 +1,11 @@
+#+ summary: Get dimensions by name
+#+ endpoint: http://virtuoso.amp.ops.labs.vu.nl/sparql
+
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?dim FROM <http://lsd-dimensions.org> WHERE {
+    ?dim a qb:DimensionProperty .
+    ?dim rdfs:label ?dim_l .
+    FILTER (regex(?dim_l, ?_query, "i"))
+}
