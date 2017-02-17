@@ -5,7 +5,7 @@ PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
-SELECT DISTINCT ?code FROM <http://lsd-dimensions.org> WHERE {
+SELECT DISTINCT ?code ?code_l FROM <http://lsd-dimensions.org> WHERE {
     ?dim a qb:DimensionProperty .
     ?dim qb:codeList ?codelist .
     ?code skos:inScheme ?codelist .
