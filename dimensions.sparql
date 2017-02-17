@@ -4,9 +4,9 @@
 PREFIX qb: <http://purl.org/linked-data/cube#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?dim (COUNT(?endpoint) AS ?freq) FROM <http://lsd-dimensions.org> WHERE {
+SELECT DISTINCT ?dim ?dim_l (COUNT(?endpoint) AS ?freq) FROM <http://lsd-dimensions.org> WHERE {
     ?dim a qb:DimensionProperty .
     ?dim rdfs:label ?dim_l .
-    ?dim qb:endpoint ?endpoint
+    ?dim qb:endpoint ?endpoint .
     FILTER (regex(?dim_l, ?_query, "i"))
 } GROUP BY ?dim ORDER BY DESC(?freq)
