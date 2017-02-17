@@ -9,4 +9,4 @@ SELECT DISTINCT ?dim ?dim_l (COUNT(?endpoint) AS ?freq) FROM <http://lsd-dimensi
     ?dim rdfs:label ?dim_l .
     ?dim qb:endpoint ?endpoint .
     FILTER (regex(?dim_l, ?_query, "i"))
-} GROUP BY ?dim ORDER BY DESC(?freq)
+} GROUP BY ?dim ?dim_l ORDER BY DESC(?freq)
