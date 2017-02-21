@@ -11,4 +11,4 @@ SELECT DISTINCT ?code ?code_l FROM <http://lsd-dimensions.org> WHERE {
     ?code skos:inScheme ?codelist .
     ?code skos:prefLabel ?code_l .
     FILTER (regex(?code_l, ?_query, "i"))
-} ORDER BY DESC(?code)
+} ORDER BY ASC(?code)

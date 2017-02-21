@@ -10,4 +10,4 @@ SELECT DISTINCT ?code ?code_l FROM <http://lsd-dimensions.org> WHERE {
     ?_dim_iri qb:codeList ?codelist .
     ?code skos:inScheme ?codelist .
     ?code skos:prefLabel ?code_l .
-} ORDER BY DESC(?code)
+} ORDER BY ASC(?code)
